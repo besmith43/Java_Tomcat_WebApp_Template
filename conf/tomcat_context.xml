@@ -1,0 +1,7 @@
+
+    <Resource name="jdbc/example" auth="Container"
+        type="javax.sql.DataSource"
+        driverClassName="org.xerial.sqlite-jdbc"
+        url="jdbc:sqlite:${catalina.base}/db/example.sqlite"
+    />
+
