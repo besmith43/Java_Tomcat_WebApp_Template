@@ -10,14 +10,20 @@
 
 if [ -z "$1" ]; then
     echo "publish failed because you need to pass in the filename for the war" >&2
+    exit 1
 fi
 
 project_name="$1"
 
+if [ -z "$2" ]; then
+    echo "publish failed because you need to pass in the ssh server name" >&2
+    exit 1
+fi
+
+ssh_server="$2"
 
 config_file="$project_name.conf"
 war_file="$project_name.war"
-ssh_server="web"
 nginx_config_path="/etc/nginx/conf.d"
 tomcat_context_xml="/opt/tomcat/base/conf/context.xml"
 project_context="conf/tomcat_context.xml"

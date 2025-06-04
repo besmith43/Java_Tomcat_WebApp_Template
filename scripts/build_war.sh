@@ -21,7 +21,7 @@ mkdir -p dist/WEB-INF/lib
 mkdir -p dist/META-INF/
 
 
-cp web/*.jsp dist/
+cp -r web/* dist/
 
 if [ -d lib ]; then
     cp lib/*.jar dist/WEB-INF/lib
